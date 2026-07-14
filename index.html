@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Nuôi Tôi - Dự Án Sinh Tồn | Feed Me Project</title>
+    <meta name="description" content="HÃY NUÔI TÔI. Tôi hứa sao kê đầy đủ! 💯. Trang web kêu gọi tài trợ lương thực cho học sinh nghèo vượt khó. Donate 2k cũng nhận!">
+    <meta name="keywords" content="nuôi tôi, donate, học sinh nghèo, sao kê, hài hước, charity, feed me, xin tiền online">
+    <meta name="author" content="Feed Me Project">
+    <meta name="theme-color" content="#f0fdf4">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://larry1337-cat.github.io/nuoitoi2026/">
+    <meta property="og:title" content="Nuôi Tôi - Dự Án Sinh Tồn 🌱">
+    <meta property="og:description" content="HÃY NUÔI TÔI. Tôi hứa sao kê đầy đủ! 💯">
+    <meta property="og:image" content="https://i.imgur.com/KwfUBoi.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Mầm non hy vọng - Dự án Nuôi Tôi">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nuôi Tôi - Dự Án Sinh Tồn 🌱">
+    <meta name="twitter:description" content="HÃY NUÔI TÔI. Tôi hứa sao kê đầy đủ! 💯">
+    <meta name="twitter:image" content="https://i.imgur.com/KwfUBoi.jpeg">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="text-gray-800 relative bg-gradient-to-b from-green-50 to-white min-h-screen" onclick="closeDropdown(event)">
+
+    <div id="preloader">
+        <div class="flex flex-col items-center justify-center gap-6">
+            <i class="fa-solid fa-seedling text-6xl text-green-500 animate-bounce"></i>
+            <div class="w-8 h-8 border-4 border-green-100 border-t-green-500 rounded-full animate-spin"></div>
+        </div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-40 bg-white/90 backdrop-blur-md border-b border-green-100 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl md:text-2xl font-extrabold text-green-600 flex items-center gap-2 hover:scale-105 transition">
+                <i class="fa-solid fa-seedling animate-bounce"></i>
+                <span data-i18n="brand_name">NUÔI TÔI</span>
+            </a>
+
+            <div class="relative">
+                <button id="lang-btn" onclick="toggleDropdown(event)" class="flex items-center gap-2 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-bold py-2 px-4 rounded-full transition shadow-sm hover:shadow-md">
+                    <span id="current-flag" class="text-xl">🇻🇳</span>
+                    <span id="current-lang-name" class="hidden md:inline">Tiếng Việt</span>
+                    <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                </button>
+
+                <div id="lang-menu" class="lang-dropdown">
+                    <div class="lang-item" onclick="changeLanguage('vi')"><span class="text-xl">🇻🇳</span> <span>Tiếng Việt</span></div>
+                    <div class="lang-item" onclick="changeLanguage('en')"><span class="text-xl">🇬🇧</span> <span>English</span></div>
+                    <div class="lang-item" onclick="changeLanguage('zh')"><span class="text-xl">🇨🇳</span> <span>中文 (Trung)</span></div>
+                    <div class="lang-item" onclick="changeLanguage('jp')"><span class="text-xl">🇯🇵</span> <span>日本語 (Nhật)</span></div>
+                    <div class="lang-item" onclick="changeLanguage('kr')"><span class="text-xl">🇰🇷</span> <span>한국어 (Hàn)</span></div>
+                    <div class="lang-item" onclick="changeLanguage('fr')"><span class="text-xl">🇫🇷</span> <span>Français (Pháp)</span></div>
+                    <div class="lang-item" onclick="changeLanguage('ru')"><span class="text-xl">🇷🇺</span> <span>Русский (Nga)</span></div>
+                    <div class="lang-item" onclick="changeLanguage('th')"><span class="text-xl">🇹🇭</span> <span>ไทย (Thái)</span></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-24 pb-10 container mx-auto px-4 max-w-4xl">
+
+        <section class="text-center py-8 space-y-4">
+            <div class="inline-block bg-green-100 text-green-800 px-4 py-1 rounded-full text-xs md:text-sm font-bold mb-2 shadow-sm animate-pulse">
+                <span data-i18n="hero_tag">🔋 Cần nạp năng lượng để tồn tại</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                <span data-i18n="hero_title_1">HÃY</span> <span class="shimmer" data-i18n="hero_title_highlight">NUÔI TÔI</span>.<br>
+                <span class="text-xl md:text-3xl text-gray-500 font-bold mt-2 block" data-i18n="hero_subtitle">Tôi hứa sao kê đầy đủ! 💯</span>
+            </h1>
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto italic">
+                "<span data-i18n="hero_quote">Tôi nghèo, tôi đói, nhưng tôi uy tín. Mỗi bữa ăn bạn mời, tôi sẽ ghi nhớ đến tận bữa sau.</span>"
+            </p>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+            <div class="bg-white p-6 rounded-3xl shadow-lg border border-green-100 relative overflow-hidden hover-card group">
+                <div class="absolute -right-6 -top-6 bg-green-50 w-24 h-24 rounded-full group-hover:scale-150 transition duration-500"></div>
+                <div class="relative z-10">
+                    <p class="text-gray-500 text-sm font-bold uppercase tracking-wider" data-i18n="stat_balance">💰 Số Dư Hiện Tại</p>
+                    <h3 class="text-4xl font-extrabold text-green-600 mt-2 transition-all duration-300" id="total-balance-display">0</h3>
+                    <p class="text-xs text-gray-400 font-semibold mt-1">VND (<span data-i18n="stat_realtime">Realtime</span>)</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl shadow-lg border border-yellow-100 md:col-span-2 hover-card relative overflow-hidden">
+                <div class="flex justify-between items-end mb-4 relative z-10">
+                    <div>
+                        <p class="text-gray-500 text-sm font-bold uppercase tracking-wider" data-i18n="stat_goal">🎯 Mục tiêu tháng này</p>
+                        <h3 class="text-3xl font-extrabold text-gray-800 mt-1 flex items-baseline gap-2">
+                            1.000.000 <span class="text-sm text-gray-400">VND</span>
+                        </h3>
+                    </div>
+                    <span class="text-yellow-700 font-bold bg-yellow-100 px-3 py-1 rounded-full text-sm shadow-sm" id="progress-text">0%</span>
+                </div>
+                <div class="w-full bg-gray-100 rounded-full h-4 overflow-hidden shadow-inner relative z-10">
+                    <div class="bg-gradient-to-r from-yellow-400 to-orange-400 h-4 rounded-full transition-all duration-500 ease-out" style="width: 0%" id="progress-bar">
+                        <div class="w-full h-full opacity-30 bg-[length:10px_10px] bg-[linear-gradient(45deg,rgba(255,255,255,.15)25%,transparent_25%,transparent_50%,rgba(255,255,255,.15)50%,rgba(255,255,255,.15)75%,transparent_75%,transparent)] animate-[pulse_1s_linear_infinite]"></div>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-400 mt-2 italic text-right relative z-10" data-i18n="stat_cheer">Sắp đủ tiền đóng học phí rồi...</p>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-3xl shadow-xl mb-12 border border-gray-100 hover-card">
+            <h2 class="text-2xl font-bold mb-8 flex items-center gap-3 text-gray-800">
+                <div class="bg-blue-100 p-2 rounded-lg text-blue-600">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <span data-i18n="plan_title">Tôi Sẽ Dùng Tiền Vào Đâu?</span>
+            </h2>
+
+            <div class="space-y-6">
+                <div class="group">
+                    <div class="flex justify-between mb-2 text-sm font-bold">
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-blue-500"></i> <span data-i18n="plan_1">Đóng tiền học phí</span></span>
+                        <span class="text-blue-600 bg-blue-50 px-2 rounded">50%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-3 overflow-hidden">
+                        <div class="bg-blue-500 h-3 rounded-full transition-all duration-1000 delay-300 group-hover:bg-blue-600" style="width: 50%"></div>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-1 ml-6" data-i18n="plan_1_desc">Ưu tiên số 1, cứu vớt tấm bằng.</p>
+                </div>
+
+                <div class="group">
+                    <div class="flex justify-between mb-2 text-sm font-bold">
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-mug-hot text-green-500"></i> <span data-i18n="plan_2">Sữa Milo & Kẹo</span></span>
+                        <span class="text-green-600 bg-green-50 px-2 rounded">30%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-3 overflow-hidden">
+                        <div class="bg-green-500 h-3 rounded-full transition-all duration-1000 delay-500 group-hover:bg-green-600" style="width: 30%"></div>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <div class="flex justify-between mb-2 text-sm font-bold">
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-cookie-bite text-orange-500"></i> <span data-i18n="plan_3">Bim bim (Snack)</span></span>
+                        <span class="text-orange-600 bg-orange-50 px-2 rounded">20%</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-3 overflow-hidden">
+                        <div class="bg-orange-400 h-3 rounded-full transition-all duration-1000 delay-700 group-hover:bg-orange-500" style="width: 20%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-4 px-2">
+                <h2 class="text-xl md:text-2xl font-extrabold text-gray-800 flex items-center gap-2">
+                    <i class="fa-solid fa-file-invoice-dollar text-green-600"></i> <span data-i18n="history_title">Sao Kê Realtime</span>
+                </h2>
+                <div class="flex items-center gap-1 bg-green-100 px-3 py-1 rounded-full shadow-sm">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
+                    <span class="text-xs font-bold text-green-700">Live</span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-gray-50 text-gray-500 text-xs uppercase font-bold tracking-wider">
+                            <tr>
+                                <th class="p-4 border-b" data-i18n="table_time">Thời gian</th>
+                                <th class="p-4 border-b" data-i18n="table_user">Người chuyển/Nhận</th>
+                                <th class="p-4 border-b text-right" data-i18n="table_amount">Số tiền</th>
+                                <th class="p-4 border-b" data-i18n="table_content">Nội dung</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm divide-y divide-gray-100" id="history-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="donate" class="bg-white rounded-[2rem] p-8 md:p-12 text-center shadow-2xl border-4 border-white ring-1 ring-gray-100 relative overflow-visible transform transition hover:-translate-y-1">
+
+            <h2 class="text-3xl font-extrabold mb-2 text-gray-800 relative z-10" data-i18n="donate_title">CỔNG TIẾP TẾ LƯƠNG THỰC</h2>
+            <p class="text-gray-500 mb-8 relative z-10" data-i18n="donate_desc">Mỗi đóng góp của bạn là một bát cơm (hoặc gói mì) cho tôi.</p>
+
+            <div class="max-w-xs mx-auto bg-white rounded-2xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)] border border-gray-100 overflow-visible relative z-10 pb-4">
+                <div class="bg-[#120c6e] p-4 flex items-center justify-center gap-3 rounded-t-2xl">
+                    <div class="bg-white p-1 rounded h-8 w-16 flex items-center justify-center shadow-sm">
+                        <img id="bank-logo" alt="MB" class="h-full object-contain">
+                    </div>
+                    <span class="text-white font-bold tracking-widest text-sm">MB BANK</span>
+                </div>
+
+                <div class="p-6 pb-2">
+                    <div class="mb-3 text-center">
+                        <span class="inline-block bg-red-50 text-red-600 text-xs font-bold px-3 py-1 rounded-full border border-red-100 shadow-sm animate-pulse">
+                            ❤️ <span data-i18n="qr_note">1.000đ cũng nhận ạ</span>
+                        </span>
+                    </div>
+
+                    <div class="relative inline-block group">
+                        <div class="bg-white p-2 rounded-xl shadow-inner border border-gray-200">
+                            <img id="qr-image" alt="QR Code" class="w-48 h-48 object-contain mix-blend-multiply transition group-hover:scale-105 duration-300">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 mt-6">
+                        <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest" data-i18n="acc_num_label">Số Tài Khoản</p>
+                        <div class="flex items-center justify-center gap-2 group cursor-pointer bg-blue-50 hover:bg-blue-100 p-3 rounded-xl border border-blue-100 hover:border-blue-300 transition duration-300" onclick="copyToClipboard(siteConfig.accountNumber)">
+                            <span id="acc-number-display" class="text-2xl font-mono font-bold text-[#120c6e] tracking-wider"></span>
+                            <i class="fa-regular fa-copy text-blue-400 group-hover:text-blue-600"></i>
+                        </div>
+                        <p id="account-owner-display" class="text-sm font-bold text-gray-700 uppercase pt-2"></p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-8 text-sm text-gray-400 italic">
+                *<span data-i18n="scan_note">Quét mã bằng app ngân hàng nào cũng được ạ.</span>*
+            </p>
+            <p class="mt-2 text-sm text-gray-500 font-bold" data-i18n="car_promise">
+                Tôi hứa sẽ không mua ô tô bằng tiền donate. Vì... tôi chưa có bằng lái!
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="bg-white/50 backdrop-blur border-t border-gray-100 text-gray-400 py-8 text-center text-sm relative z-10">
+        <p class="container mx-auto px-4 max-w-2xl">
+            <strong>⚠️ <span data-i18n="disclaimer_title">LƯU Ý:</span></strong> <span data-i18n="disclaimer_text">Mọi nội dung trên web đều mang tính giải trí, không nhằm mục đích xúc phạm hay chỉ trích bất kỳ cá nhân/tổ chức nào.</span>
+        </p>
+        <div class="pt-4 mt-4 text-xs text-gray-300">
+            &copy; 2026 <span data-i18n="footer_project">Dự án Nuôi Tôi.</span>
+        </div>
+    </footer>
+
+    <div id="toast" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-full shadow-2xl opacity-0 transition-all duration-300 translate-y-10 pointer-events-none z-50 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-green-400"></i>
+        <span id="toast-message">Đã copy!</span>
+    </div>
+
+    <div id="messenger-pop" class="messenger-pop fixed top-0 left-0 right-0 z-[60] px-4 pt-4 md:pt-6 pointer-events-none flex justify-center">
+        <div class="bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl p-4 w-full max-w-lg border border-gray-100 ring-1 ring-black/5 flex items-center gap-4 relative overflow-hidden">
+            <div id="pop-color-bar" class="absolute left-0 top-0 bottom-0 w-1.5 bg-green-500"></div>
+            <div class="shrink-0 relative">
+                <div id="pop-avatar-bg" class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-xl text-green-600 shadow-sm border border-white">
+                    <i id="pop-icon" class="fa-solid fa-bell"></i>
+                </div>
+                <div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-white"></div>
+            </div>
+            <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-start">
+                    <h4 id="pop-title" class="font-bold text-gray-900 truncate pr-2 text-base">Thông báo mới</h4>
+                    <span class="text-[10px] text-gray-400 whitespace-nowrap pt-0.5" id="pop-time-text">Vừa xong</span>
+                </div>
+                <p id="pop-msg" class="text-sm text-gray-600 truncate mt-0.5 font-medium">Nội dung thông báo...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/i18n.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+</body>
+</html>

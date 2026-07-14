@@ -1,0 +1,102 @@
+body {
+    font-family: 'Nunito', 'Noto Sans SC', 'Noto Sans Thai', sans-serif;
+    background-color: #f0fdf4;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+#preloader.hidden-loader {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: .5rem;
+    background: white;
+    border-radius: .75rem;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0,.1);
+    width: 180px;
+    max-height: 300px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all .3s ease;
+    z-index: 50;
+    border: 1px solid #f0f0f0;
+}
+.lang-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background .2s;
+    font-size: .95rem;
+    color: #374151;
+    border-bottom: 1px solid #f9fafb;
+}
+.lang-item:last-child { border-bottom: none; }
+.lang-item:hover {
+    background-color: #f0fdf4;
+    color: #166534;
+}
+
+.hover-card {
+    transition: all .3s cubic-bezier(.25,.8,.25,1);
+}
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0,0,0,.1), 0 10px 10px rgba(0,0,0,.08);
+}
+
+.shimmer {
+    background: linear-gradient(to right, #166534 0%, #4ade80 50%, #166534 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+}
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+.new-row-highlight {
+    animation: highlightFade 3s ease-out;
+    background-color: #dcfce7;
+}
+@keyframes highlightFade {
+    0% { background-color: #86efac; }
+    100% { background-color: transparent; }
+}
+
+.messenger-pop {
+    transition: all .6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(-150%);
+    opacity: 0;
+}
+.messenger-pop.show {
+    transform: translateY(0);
+    opacity: 1;
+}
